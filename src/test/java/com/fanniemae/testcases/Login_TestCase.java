@@ -1,9 +1,12 @@
 package com.fanniemae.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.fanniemae.base.TestBase;
+import com.fanniemae.utilities.TestUtil;
 
 
 public class Login_TestCase extends TestBase {
@@ -19,7 +22,7 @@ public class Login_TestCase extends TestBase {
 	}
 	
 	@Test(enabled=true)
-	public void tc_newAccount(){
+	public void tc_newAccount() throws IOException{
 		click("id_login_button");
 		click("id_createnew_button");
 		type("id_firstname_field", "James");
@@ -33,6 +36,7 @@ public class Login_TestCase extends TestBase {
 		select("id_country_dropdown", "United States");
 		type("id_instruction_field", "junk");
 		click("id_submit_button");		
+		TestUtil.captureScreenshot();
 	}
 	
 

@@ -22,7 +22,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TestBase {
 	
-	private static WebDriver driver;
+	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
