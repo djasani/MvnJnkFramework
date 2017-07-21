@@ -65,9 +65,15 @@ public class TestBase {
 				
 			
 			if(System.getenv("browser")!=null && !System.getenv("browser").isEmpty()){
+				System.out.println("From env");
 				browser = System.getenv("browser");
 			}else{
+				System.out.println("Property Value : " + config.getProperty("browser"));
 				browser = config.getProperty("browser");
+			}
+			
+			if (System.getProperty("browser")!= null){
+				browser=System.getProperty("browser");
 			}
 			
 			config.setProperty("browser", browser);
